@@ -1,0 +1,50 @@
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #f9f9f9;
+}
+
+button {
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+.name,
+.number {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+}
+.icon {
+  color: #000;
+  font-size: 16px;
+}
+.number {
+  color: #666;
+  font-size: 14px;
+}
