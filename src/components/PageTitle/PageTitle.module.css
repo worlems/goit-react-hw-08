@@ -1,0 +1,11 @@
+.heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  text-align: center;
+  margin: 40px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #3498db;
+  letter-spacing: 1.5px;
+  line-height: 1.3;
+}

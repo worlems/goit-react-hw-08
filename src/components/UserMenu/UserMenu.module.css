@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #f3f5f7;
+  padding: 8px 16px;
+  border-radius: 12px;
+}
+
+.username {
+  font-weight: 500;
+  font-size: 16px;
+  color: #333;
+}
+
+.username span {
+  font-weight: 600;
+  color: #00b068;
+}
+
+.button {
+  padding: 8px 16px;
+  background-color: #00b068;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #00995a;
+}

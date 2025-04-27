@@ -1,27 +1,39 @@
-import { FaUserAlt } from "react-icons/fa";
-import { FaPhone } from "react-icons/fa6";
-import styles from "./Contact.module.css";
-import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contactsOps";
+import { FaPhone, FaUser } from "react-icons/fa6";
+import { useEffect } from "react";
+import s from "../Contact/Contact.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  deleteContact,
+  fetchContacts,
+} from "../../redux/contacts/operations.js";
+import { selectContacts } from "../../redux/contacts/selectors.js";
 
-export default function Contact({ contact }) {
+export const Contact = ({ items: { name, number, id } }) => {
   const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
 
-  const handleDelete = () => dispatch(deleteContact(contact.id));
+  useEffect(() => {
+    if (contacts.length === 0) {
+      dispatch(fetchContacts());
+    }
+  }, [dispatch, contacts.length]);
+
+  const handleDelete = () => dispatch(deleteContact(id));
+
   return (
-    <li className={styles.contact}>
-      <div className={styles.info}>
-        <span className={styles.name}>
-          <FaUserAlt className={styles.icon} /> {contact.name}
+    <li className={s.contact}>
+      <div className={s.info}>
+        <span className={s.name}>
+          <FaUser className={s.icon} /> {name}
         </span>
-        <span className={styles.number}>
-          <FaPhone className={styles.icon} />
-          {contact.number}
+        <span className={s.number}>
+          <FaPhone className={s.icon} />
+          {number}
         </span>
       </div>
-      <button className={styles.button} onClick={handleDelete}>
+      <button className={s.button} onClick={handleDelete}>
         Delete
       </button>
     </li>
   );
-}
+};
